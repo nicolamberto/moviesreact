@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { motion } from 'framer-motion';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -50,14 +50,16 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchBar({searchKey, setSearchKey, fetching}) {
+export default function SearchBar({setSearchKey, fetching}) {
 
     const searchMovies = (e) =>{
         e.preventDefault()
         fetching()
+        
     }
   return (
     <Box sx={{ flexGrow: 0 }}>
+     
       <AppBar position="fixed">
         <Toolbar>
           <Typography
@@ -83,6 +85,8 @@ export default function SearchBar({searchKey, setSearchKey, fetching}) {
           </Search>
         </Toolbar>
       </AppBar>
+      
+      
     </Box>
   );
 }
